@@ -5,6 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class PageController {
 
+    @GetMapping("/")
+    public String hello(){
+        return "Hello world";
+    }
+
     @GetMapping("/index")
     public String index(){
         return "index";
