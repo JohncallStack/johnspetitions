@@ -8,6 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class JohnspetitionsApplication {
 
+	@RequestMapping("/")
+	public String hello1() {
+		return "A new way of saying Hello";
+	}
+
+	@RequestMapping("/hello")
+	public String hello2() {
+		return "Hello Again";
+	}
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(JohnspetitionsApplication.class, args);
 	}
