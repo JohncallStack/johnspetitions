@@ -28,7 +28,7 @@ pipeline {
         stage ('Archive'){
                     steps {
                         archiveArtifacts allowEmptyArchive: true,
-                        artifacts: '**/demo*.war'
+                        artifacts: '**/johnspetitions*.war'
                     }
                 }
 
@@ -40,13 +40,13 @@ pipeline {
                     }
                 }
     }
-    post {
-        success {
-            archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/*.war'
-        }
-        failure {
-                    echo 'Build failed. Check logs for details.'
-                }
-    }
+//     post {
+//         success {
+//             archiveArtifacts allowEmptyArchive: true,
+//                 artifacts: '**/*.war'
+//         }
+//         failure {
+//                     echo 'Build failed. Check logs for details.'
+//                 }
+//     }
 }
