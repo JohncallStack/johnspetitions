@@ -10,7 +10,7 @@ public class JohnspetitionsApplication {
 
 	@RequestMapping("/")
 	public String hello1() {
-		return "A new way of saying Hello";
+		return "Hello";
 	}
 
 	@RequestMapping("/hello")
