@@ -11,7 +11,7 @@ public class JohnspetitionsApplication {
 
 	@RequestMapping("/")
 	public String hello1() {
-		return "Hello, checking to see if my webhook has connecting correctly.";
+		return "Hello, checking to see if my webhook has connecting correctly, maybe this time??";
 	}
 
 	@RequestMapping("/hello")
