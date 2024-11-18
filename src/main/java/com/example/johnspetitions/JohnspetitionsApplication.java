@@ -11,12 +11,12 @@ public class JohnspetitionsApplication {
 
 	@RequestMapping("/")
 	public String hello1() {
-		return "Hello";
+		return "Hello, checking to see if my webhook has connecting correctly.";
 	}
 
 	@RequestMapping("/hello")
 	public String hello2() {
-		return "Hello Again";
+		return "Hello Again, it seems the webhook has connected correctly!";
 	}
 
 
