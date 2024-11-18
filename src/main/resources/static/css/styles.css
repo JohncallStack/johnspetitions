@@ -1,19 +1,22 @@
 /* Custom styles to lock image size and style buttons */
 .custom-image {
-    width: 100%; /* This will make the image take up 100% of its container's width */
-    max-width: 250px; /* Limit the image width */
-    height: auto; /* Maintain aspect ratio */
-    border: 2px solid lightgrey; /* Light grey border around the image */
+    height: 100%; /* This will make the image take up 100% of its container's width */
+    max-height: 250px; /* Limit the image width */
+    width: auto; /* Maintain aspect ratio */
     padding: 10px; /* Padding around the image */
     border-radius: 8px; /* Optional: rounded corners for image */
 }
 
 .custom-buttons {
-    border: 2px solid lightgrey; /* Light grey border around buttons */
-    padding: 15px; /* Padding around buttons */
+    padding: 10px; /* Padding around buttons */
     border-radius: 8px; /* Optional: rounded corners for buttons */
 }
 
 .list-group-item {
     border: 1px solid lightgrey; /* Adding border to individual buttons */
+}
+
+.pageTitle{
+  font-family: "Arial";
+  text-align: center;
 }
