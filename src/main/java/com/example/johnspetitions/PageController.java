@@ -1,14 +1,22 @@
 package com.example.johnspetitions;
 
+import com.example.johnspetitions.Petition;
+import com.example.johnspetitions.PetitionService;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
 @Controller
 public class PageController {
+
+    @Autowired
+    private PetitionService petitionService;
 
     @GetMapping("/index")
     public String index(){
@@ -20,22 +28,28 @@ public class PageController {
         return "createPetition";
     }
 
+    @PostMapping("/createPetition")
+    public String createPetition(
+            @RequestParam String title,
+            @RequestParam String description,
+            @RequestParam String creatorName,
+            @RequestParam(required = false) Boolean subscribeNewsletter
+    ){
+        Petition petition = new Petition(title, description, creatorName, subscribeNewsletter);
+        petitionService.addPetition(petition);
+        return "redirect:/view";
+    }
+
     @GetMapping("/viewPetitions")
     public String viewPetitions(Model model) {
-        model.addAttribute("petitions", List.of("Petition 1", "Petition 2", "Petition 3"));
+        List<Petition> petitions = petitionService.getAllPetitions();
+        model.addAttribute("petitions", petitions);
         return "viewPetitions";
     }
 
     @GetMapping("/searchPetitions")
     public String searchPetitions(){
         return "searchPetitions";
-    }
-
-    @GetMapping("/petition/{id}")
-    public String petition(@PathVariable("id") String id, Model model){
-        model.addAttribute("petitionTitle", "Example Petition Title" + id);
-        model.addAttribute("petitionDescription", "This is an example petition description."+ id);
-        return "petition";
     }
 
 }
