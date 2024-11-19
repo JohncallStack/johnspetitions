@@ -55,8 +55,15 @@ public class PageController {
     @PostMapping("/searchPetitions")
     public String searchResults(@RequestParam String keyword, Model model){
         List<Petition> results = petitionService.searchPetitions(keyword);
-        model.addAttribute("results", results);
-        return "petition";
+        if(!results.isEmpty()){
+            Petition petition = results.get(0);
+            model.addAttribute("petition", petition);
+            return "petition";
+        }else{
+            model.addAttribute("message","No petitions found for the search: "+keyword);
+            return "searchPetition";
+        }
+
     }
 
 } //end class

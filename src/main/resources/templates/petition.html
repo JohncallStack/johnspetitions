@@ -25,28 +25,26 @@
     </div>
 </nav>
 <!--Dynamic Content-->
-<h1 th:text="${result.title}"></h1>
-<p th:text="${result.description}"></p>
-<p>By: <span th:text="${result.creatorName}"></span></p>
+<h1 th:text="${petition.title}"></h1>
+<p th:text="${petition.description}"></p>
+<p>By: <span th:text="${petition.creatorName}"></span></p>
 
 <br><!--User Signature-->
-<p>To sign this petiton please enter your Name and email address below</p>
-<div class="row g-3">
-    <div class="col-md-6">
-        <label for="userName" class="form-label">Name</label>
-        <input type="text" class="form-control" aria-label="userName" id="userName">
-        <div id="nameDesc" class="form-text">
-            Enter your fullname
+<p>To sign this Petiton please enter your Name and email address below</p>
+
+    <form>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" aria-label="userName" id="userName" placeholder="Enter your fullname">
+            </div>
+            <div class="col-md-6">
+                <input type="email" class="form-control" aria-label="emailHelp" id="email" placeholder="Enter your email">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign</button>
         </div>
-    </div>
-    <div class="col-md-6">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" aria-label="emailHelp" id="email">
-        <div id="emailDesc" class="form-text">
-            Enter your email to sign this petition
-        </div>
-    </div>
-</div>
+    </form>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
