@@ -16,16 +16,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index"> Home </a>
+                    <a class="nav-link active" aria-current="page" href="/index"> Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="createPetition"> Create Petition </a>
+                    <a class="nav-link" href="/createPetition"> Create Petition </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="viewPetitions"> View Petitions </a>
+                    <a class="nav-link" href="/viewPetitions"> View Petitions </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="searchPetitions"> Search Petitions </a>
+                    <a class="nav-link " href="/searchPetitions"> Search Petitions </a>
                 </li>
             </ul>
         </div>
@@ -36,11 +36,11 @@
 
 <ul>
     <li th:each="petition : ${petitions}">
-        <h2 th:each="petition : ${petitions}"></h2>
-        <p th:text="${petition.description}"> </p>
-        <p>By: <span th:text="${petition.creatorName}" < p>
-    </span></p></li>
-
+        <a th:href="@{/petition/{id}(id=${petition.id})}">
+            <h2 th:text="${petition.title}"></h2>
+        </a>
+        <p th:text="${petition.oneLine}"> </p>
+    </li>
 </ul>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -1,18 +1,23 @@
 package com.example.johnspetitions;
 
+import java.util.UUID;
+
 public class Petition {
+    private String id;
     private String title;
+    private String oneLine;
     private String description;
     private String creatorName;
     private boolean subscriberNewsletter;
 
-    public Petition(String title, String description, String creatorName, boolean subscriberNewsletter){
+    public Petition(String title, String oneLine, String description, String creatorName, boolean subscriberNewsletter){
+        this.id = UUID.randomUUID().toString();
         this.title = title;
+        this.oneLine = oneLine;
         this.description = description;
         this.creatorName = creatorName;
         this.subscriberNewsletter = subscriberNewsletter;
     }
-
 
     public String getTitle() {
         return title;
@@ -46,4 +51,19 @@ public class Petition {
         this.subscriberNewsletter = subscriberNewsletter;
     }
 
+    public String getOneLine() {
+        return oneLine;
+    }
+
+    public void setOneLine(String oneLine) {
+        this.oneLine = oneLine;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 } // end class

@@ -26,4 +26,13 @@ public class PetitionService {
                 .collect(Collectors.toList());
     }
 
+    public Petition getPetitionById(String id){
+        return petitions.stream()
+                .filter(petition -> petition.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void addSignatureToPetition(String id, PetitionSignature petitionSignature) {
+    }
 } // end class
