@@ -45,18 +45,18 @@
 <form method="POST">
     <div class="mb-3">
         <label for="creatorName" class="form-label">Name</label>
-        <input type="text" class="form-control" id="creatorName" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="creatorName" aria-describedby="emailHelp" name="creatorName">
     </div>
 
     <div class="row g-3">
         <div class="col-md-6">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" aria-label="emailHelp" id="email">
+            <input type="email" class="form-control" aria-label="emailHelp" id="email" name="email">
             <div id="emailDesc" class="form-text">Email to login and manage petitions</div>
         </div>
         <div class="col-md-6">
             <label for="password" class="form-label">Password</label>
-            <input type="text" class="form-control" aria-label="pword" id="password">
+            <input type="password" class="form-control" aria-label="pword" id="password" name="password">
             <div id="passwordDesc" class="form-text">Enter memorable password</div>
         </div>
     </div>
@@ -64,18 +64,18 @@
     <br>
     <div class="mb-3">
         <label for="title" class="form-label">Petition Name</label>
-        <input type="text" class="form-control" id="title">
+        <input type="text" class="form-control" id="title" name="title">
         <div id="petitionNameDesc" class="form-text">Enter your petition name. Make it something memorable that jumps out!</div>
     </div>
     <br>
 
     <div class="form-floating">
-        <textarea class="form-control" placeholder="Write your petition description here." id="description"></textarea>
+        <textarea class="form-control" placeholder="Write your petition description here." id="description" name="description"></textarea>
         <label for="description">Write your Petition description here.</label>
     </div>
     <br>
     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="subscribeNewsletter">
+        <input type="checkbox" class="form-check-input" id="subscribeNewsletter" name="subscribeNewsletter">
         <label class="form-check-label" for="subscribeNewsletter">Tick here to receive our newsletter for updates on future
             campaigns</label>
     </div>

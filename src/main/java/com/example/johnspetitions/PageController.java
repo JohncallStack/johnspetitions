@@ -37,7 +37,7 @@ public class PageController {
     ){
         Petition petition = new Petition(title, description, creatorName, subscribeNewsletter);
         petitionService.addPetition(petition);
-        return "redirect:/view";
+        return "redirect:/viewPetitions";
     }
 
     @GetMapping("/viewPetitions")
