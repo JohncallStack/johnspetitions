@@ -52,4 +52,11 @@ public class PageController {
         return "searchPetitions";
     }
 
-}
+    @PostMapping("/searchPetitions")
+    public String searchResults(@RequestParam String keyword, Model model){
+        List<Petition> results = petitionService.searchPetitions(keyword);
+        model.addAttribute("results", results);
+        return "petition";
+    }
+
+} //end class
