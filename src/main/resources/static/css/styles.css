@@ -20,3 +20,15 @@
   font-family: "Arial";
   text-align: center;
 }
+
+.form-container{
+  font-family: "Arial";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 60%;
+  margin: 0 auto;
+  border: 5px solid lightgrey;
+  border-radius: 8px;
+}
