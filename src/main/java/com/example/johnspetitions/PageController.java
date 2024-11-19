@@ -18,6 +18,11 @@ public class PageController {
     @Autowired
     private PetitionService petitionService;
 
+    @GetMapping("/")
+    public String redirectToHome() {
+        return "redirect:/johnspetitions/";
+    }
+
     @GetMapping("/index")
     public String index(){
         return "index";
