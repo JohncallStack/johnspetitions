@@ -38,7 +38,7 @@
 <div class="search-container">
 <!--    <form action="/johnspetitions/searchPetitions" method="post">-->
 <!--        LOCAL DEVELOPMENT-->
-        <form th:action="${/searchPetitions}" method="post">
+        <form th:action="@{/searchPetitions}" method="post">
 
         <input id="keyword" name="keyword" placeholder="Search for a petition..." required type="text">
         <button type="submit">Search</button>
