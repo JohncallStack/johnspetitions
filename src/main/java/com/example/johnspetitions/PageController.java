@@ -44,7 +44,7 @@ public class PageController {
         return "redirect:/viewPetitions";
     }
 
-    //Here we generate a list of petitions, collated from the dummy dated and anything created by user.
+    //Here we generate a list of petitions, collated from both the dummy dated and anything created by user.
     //getAllPetitions() Method is taken from injected petitionService.
     @GetMapping("/viewPetitions")
     public String viewPetitions(Model model) {

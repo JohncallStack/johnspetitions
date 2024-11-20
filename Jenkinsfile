@@ -30,6 +30,11 @@ pipeline {
                         artifacts: '**/johnspetitions*.war'
                     }
                 }
+        stage('Approve Deployment') {
+                    steps {
+                        input "The file is ready to deploy. Are you sure you want to proceed?"
+                    }
+                }
 
         stage ('Deploy'){
             steps {

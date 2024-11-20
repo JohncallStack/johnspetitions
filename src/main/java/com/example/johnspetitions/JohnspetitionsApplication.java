@@ -19,7 +19,7 @@ public class JohnspetitionsApplication {
 		return args ->{
 			petitionService.addPetition(new Petition(
 					"Skatepark for Lahinch",
-						"Build a skatepark in Lahinch, a much needed public amenity for children and young adults",
+					"Build a skatepark in Lahinch, a much needed public amenity for children and young adults",
 					"We are aiming to get enough signatures to encourage the council to invest in a much needed " +
 							"public amenity for the young people of north Clare. Given it is one of Ireland's go to surf destinations " +
 							"we believe the appetite is there and that it would provide a much needed resource for young people who may not find " +
