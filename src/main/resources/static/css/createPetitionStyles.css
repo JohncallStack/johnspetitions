@@ -1,0 +1,28 @@
+
+.form-container{
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 60%;
+  margin: 25px auto;
+  padding: 20px;
+  border: 5px solid lightgrey;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.expandable-textarea {
+    min-height: 150px;
+    max-height: 400px;
+    height: auto;
+}
+
+
+
