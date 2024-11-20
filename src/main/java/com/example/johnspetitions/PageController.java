@@ -15,9 +15,11 @@ import java.util.List;
 @Controller
 public class PageController {
 
+    //Inject Petitionservice class into controller to create functional methods.
     @Autowired
     private PetitionService petitionService;
 
+    //GetMapping used to map through different paging on app.
     @GetMapping("/index")
     public String index(){
         return "index";
@@ -28,6 +30,7 @@ public class PageController {
         return "createPetition";
     }
 
+    //PostMapping to take input, process it and map to a page with results.
     @PostMapping("/createPetition")
     public String createPetition(
             @RequestParam String title,
@@ -41,6 +44,8 @@ public class PageController {
         return "redirect:/viewPetitions";
     }
 
+    //Here we generate a list of petitions, collated from the dummy dated and anything created by user.
+    //getAllPetitions() Method is taken from injected petitionService.
     @GetMapping("/viewPetitions")
     public String viewPetitions(Model model) {
         List<Petition> petitions = petitionService.getAllPetitions();
@@ -53,6 +58,8 @@ public class PageController {
         return "searchPetitions";
     }
 
+    //Logic to redirect to search result page on entering a keyword present in the petition.
+    //Method to undertake search is taken from petitionService. Also a response if result is no results found.
     @PostMapping("/searchPetitions")
     public String searchResults(@RequestParam String keyword, Model model){
         List<Petition> results = petitionService.searchPetitions(keyword);
@@ -65,6 +72,7 @@ public class PageController {
         }
     }
 
+    //Mapping to the specific petition page using a unique id generated in a method in petitionService.
     @GetMapping("/petition/{id}")
     public String viewPetition(@PathVariable String id, Model model){
         Petition petition = petitionService.getPetitionById(id);
@@ -75,9 +83,9 @@ public class PageController {
             model.addAttribute("message", "Petition not found.");
             return "error";
         }
-
     }
 
+    //Method to deal with signature of petition and display a message to say it has been done sucessfully.
     @PostMapping("/petition/{id}")
     public String createPetitionSignature(
             @PathVariable String id,
@@ -88,14 +96,13 @@ public class PageController {
         Petition petition = petitionService.getPetitionById(id);
         if(petition != null){
             model.addAttribute("petition", petition);
-            model.addAttribute("message", "Thank you, " + name + ", for signing the petition!");
-            return "petition"; // Stay on the same page
+            model.addAttribute("message", "Thank you, " + name + ", for signing the petition: "
+                    + petition.getTitle() + ". Please consider sharing on social media! ");
+            return "petition";
         } else {
             model.addAttribute("message", "Petition not found.");
-            return "error"; // Or handle gracefully with an error page
+            return "error";
         }
         }
-
-
 
 } //end class

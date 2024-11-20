@@ -2,6 +2,11 @@ package com.example.johnspetitions;
 import com.example.johnspetitions.Petition;
 import org.springframework.stereotype.Service;
 
+//class to handle methods for petition object and therefore add functionality to website.
+//Including adding petition objects to a list for View petitions page.
+//A search function that utilises a stream to find searched keyword.
+//A function to get a specific petition based on it's unique ID. Used to map to individual petition pages.
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,6 +38,4 @@ public class PetitionService {
                 .orElse(null);
     }
 
-    public void addSignatureToPetition(String id, PetitionSignature petitionSignature) {
-    }
 } // end class

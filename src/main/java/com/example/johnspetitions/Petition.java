@@ -1,6 +1,7 @@
 package com.example.johnspetitions;
-
 import java.util.UUID;
+
+//Class to create petition object that will hold required data to create a new petition on web app.
 
 public class Petition {
     private String id;

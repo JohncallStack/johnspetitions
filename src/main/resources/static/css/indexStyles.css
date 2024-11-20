@@ -5,18 +5,18 @@
 }
 
 .pageTitleStyles{
-  font-family: Arial;
-  text-align: center;
-  padding-top: 5px;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 5px;
 }
 
 .pageDescStyles{
-  font-family: Arial;
-  text-align: justify;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 30px;
-  padding-right: 30px;
+    font-family: Arial;
+    text-align: justify;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .custom-image {

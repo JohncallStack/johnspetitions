@@ -1,5 +1,7 @@
 package com.example.johnspetitions;
 
+//Class to create petition signature object so user can sign petitions.
+
 public class PetitionSignature {
     private String name;
     private String email;
